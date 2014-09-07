@@ -28,20 +28,14 @@ public class Espelhamento {
             clienteFTP.cwd(remote_path);
         }
 
-        	 StringBuilder remotefiles = clienteFTP.LIST(remote_path);
-        	 repositorioRemoto.listarArquivosRemotos(remotefiles);
+        StringBuilder remotefiles = clienteFTP.LIST(remote_path);
+        repositorioRemoto.listarArquivosRemotos(remotefiles);
 //		repositorio.getRemoteTree(remote_path, 0);
 
         ArrayList<Arquivo> listaArquivosRemoto = repositorioRemoto
                 .getArquivosRemotos();
         ArrayList<Pasta> listaPastasRemota = repositorioRemoto.getPastasRemotas();
-
-        // Data de modificação dos arquivos remotos
-        // if (listaArquivosRemoto != null)
-        // remotetime(listaArquivosRemoto, clienteFTP);
-
-        //sincronizarArquivosRemotoParaLocal(listaArquivos, listaArquivosRemoto,
-        //			clienteFTP);
+//Começa a inserir os arquivos
         sincronizarArquivosLocalParaRemoto(listaArquivosLocais, listaArquivosRemoto,
                 clienteFTP);
 
@@ -90,12 +84,7 @@ public class Espelhamento {
                 .getArquivosRemotos();
         ArrayList<Pasta> listaPastasRemota = repositorio.getPastasRemotas();
 
-        // Data de modificação dos arquivos remotos
-        // if (listaArquivosRemoto != null)
-        // remotetime(listaArquivosRemoto, clienteFTP);
-
-        //sincronizarArquivosRemotoParaLocal(listaArquivos, listaArquivosRemoto,
-        //			clienteFTP);
+        //REMOTO PARA LOCAL
         sincronizarArquivosLocalParaRemoto(listaArquivos, listaArquivosRemoto,
                 clienteFTP);
 
