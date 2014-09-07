@@ -1,0 +1,7 @@
+localhost
+21
+1
+jzinho
+projeto123
+/local/
+/remoto/
