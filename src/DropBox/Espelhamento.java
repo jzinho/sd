@@ -28,8 +28,8 @@ public class Espelhamento {
             clienteFTP.cwd(remote_path);
         }
 
-        //	 StringBuilder remotefiles = clienteFTP.LIST(remote_path);
-        //	 repositorioRemoto.listarArquivosRemotos(remotefiles);
+        	 StringBuilder remotefiles = clienteFTP.LIST(remote_path);
+        	 repositorioRemoto.listarArquivosRemotos(remotefiles);
 //		repositorio.getRemoteTree(remote_path, 0);
 
         ArrayList<Arquivo> listaArquivosRemoto = repositorioRemoto

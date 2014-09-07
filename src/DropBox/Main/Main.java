@@ -21,16 +21,15 @@ public class Main {
 			ClienteFTP clienteFTP = new ClienteFTP(e.getHost(), e.getPorta(),
 					e.getUsuario(), e.getSenha());
 			
-		//	Repositorio repositorio = new Repositorio(clienteFTP);
-//			repositorio.listarLocal(e.getDiretorioLocal());
-			//repositorio.listarRemotos(e.getDiretorioRemoto());
+			Repositorio repositorio = new Repositorio(clienteFTP);
+			repositorio.listarLocal(e.getDiretorioLocal());
+			//repositorio.listarRemotos(e.getDiretorioRemoto(),clienteFTP);
 						
 			while (true) {
-			//	Espelhamento mirror = new Espelhamento();
-			//	mirror.espelhar(e.getDiretorioLocal(), e.getDiretorioRemoto(),
-						//clienteFTP);
-                            Repositorio p = new Repositorio(clienteFTP);
-                            p.listarRemotos(e.getDiretorioRemoto(), clienteFTP);
+				Espelhamento mirror = new Espelhamento();
+				mirror.espelhar(e.getDiretorioLocal(), e.getDiretorioRemoto(),
+						clienteFTP);
+                      
 				try {
 					Thread.sleep(e.getIntervalo() * 100000);
 				} catch (InterruptedException ex) {
